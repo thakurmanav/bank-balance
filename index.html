@@ -1,0 +1,57 @@
+<html>
+<head>
+<script>
+function deposit()
+{
+bank=parseFloat(document.getElementById("bank").value);
+amount=(document.getElementById("amount"));
+if(amount.value=="")
+{
+alert("Plz fill amount");
+}
+else
+{
+amount=parseFloat(document.getElementById("amount").value);
+bank=bank+amount;
+document.getElementById("bank").value=bank;
+document.getElementById("amount").value="";
+}
+}
+
+function withdraw()
+{
+bank=parseFloat(document.getElementById("bank").value);
+amount=(document.getElementById("amount"));
+if(amount.value=="")
+{
+alert("Plz fill amount");
+}
+else if(amount.value>bank)
+{
+alert("withdraw amount is greater then bank balance");
+}
+else
+{
+amount=parseFloat(document.getElementById("amount").value);
+bank=bank-amount;
+document.getElementById("bank").value=bank;
+document.getElementById("amount").value="";
+}
+}
+</script>
+</head>
+<body>
+<form>
+current bank balance<input type="text" id="bank" value="0" readonly /><br><br>
+amount<input type="text" id="amount" placeholder="Enter amount"><br><br>
+<input type="button" id="manav" name="manav" value="deposit" onclick="deposit()">
+<input type="button" id="manav1" name="manav" value="withdraw" onclick="withdraw()">
+
+
+
+
+</form>
+
+
+</body>
+</html>
